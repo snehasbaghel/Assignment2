@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="stylesheetA2.css">
+
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+           <nav>
+            <img src="photos/logo.jpeg" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#Portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+           </nav>
+           <div class="header-text">
+            <p><span> Web Developer</span></p>
+            <h1> Hello, I am<span> Sneha Baghel</span>, an IT Student.</h1>
+            <h5>A Tech enthusiast and passionate about new Technologies.</h5>
+
+           </div>  
+        </div>
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                <img src="photos/IMG_3857.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p> I'm Sneha Baghel, a tech enthusiast and pre-final year IT student at Banasthali Vidyapith. I'm deeply passionate about exploring new technologies and enjoy delving into the world of programming. In my free time, you'll often find me lost in a good book or enjoying some music. I'm excited about the opportunities ahead in my academic and professional journey, eager to make meaningful contributions to the field of IT.</p>
+            </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <h2>Web Designs</h2>
+                    <p>I excels in web design, adeptly crafting visually appealing and user-friendly websites. My expertise in HTML, CSS, and JavaScript enables me to create dynamic and responsive designs. With a keen eye for aesthetics and a commitment to staying updated with the latest trends, I ensures my designs are modern and functional, delivering high-quality web solutions.</p>
+                    
+            </div>
+            <div>
+                <h2>UI/UX Designs</h2>
+                <p>
+                    I excels in UI/UX design, creating intuitive and visually appealing interfaces. My expertise in wireframing, prototyping, and user testing ensures highly functional designs. Committed to staying updated with emerging trends, I delivers exceptional UI/UX solutions.</p>
+                
+        </div>
+        <div>
+            <h2>App Designs</h2>
+            <p>I can proficiently builds apps, integrating innovative features, and prioritizing user experience for seamless functionality and user satisfaction.</p>
+            
+    </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Portfolio">
+        <div class="container">
+            <h1 class="subtitle"> My Work</h1>
+            <div class="worklist">
+                <div class="work">
+                    <img src="photos/work-1.png">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>I have developed a social media app, focusing on intuitive design, personalized features, and seamless user interaction for enhanced connectivity.</p>
+
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="photos/work-2.png">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>I have engineered a music app with personalized playlists, seamless streaming, and intuitive user interfaces for an immersive listening experience.</p>
+                        
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="photos/work-3.png">
+                    <div class="layer">
+                        <h3>Web Development</h3>online shopp
+                        <p>i have also Practiced lots of Html, Css and JavaScript questions during my Web Development Lab-302</p>
+                        <a href="https://snehasbaghel.github.io/LAB-302/">LAB-302</a>
+                    </div>
+                  
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <h1 class="subtitle">Contact Me</h1>
+           <form action="#" method="post" onsubmit="return validateForm()">
+                <label for="fname" class="required">First Name:</label>
+                <input type="text" id="fname" name="fname">
+                <span id="fnameError" class="error"></span>
+            
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname">
+                <span id="lnameError" class="error"></span>
+            
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="required" name="email">
+                <span id="emailError" class="error"></span>
+            
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" class="required" name="mobile">
+                <span id="mobileError" class="error"></span>
+            
+            
+               
+            
+                <input type="submit" value="Register">
+            </form>
+            <script>
+                function validateForm() {
+                    var fname = document.getElementById('fname').value;
+                    var lname = document.getElementById('lname').value;
+                   
+                    var email = document.getElementById('email').value;
+                    var mobile = document.getElementById('mobile').value;
+                   
+            
+                    var fnameError = document.getElementById('fnameError');
+                    var lnameError = document.getElementById('lnameError');
+                    
+                    var emailError = document.getElementById('emailError');
+                    var mobileError = document.getElementById('mobileError');
+                    
+            
+                    fnameError.textContent = "";
+                    lnameError.textContent = "";
+                   
+                    emailError.textContent = "";
+                    mobileError.textContent = "";
+                   
+            
+                    var isValid = true;
+            
+                    if (fname.trim() === "") {
+                        fnameError.textContent = "First name is required";
+                        isValid = false;
+                    }
+            
+                    
+                    
+            
+                    if (email.trim() === "") {
+                        emailError.textContent = "Email is required";
+                        isValid = false;
+                    } else if (!isValidEmail(email)) {
+                        emailError.textContent = "Invalid email address";
+                        isValid = false;
+                    }
+            
+                    if (mobile.trim() === "") {
+                        mobileError.textContent = "Mobile number is required";
+                        isValid = false;
+                    } else if (!isValidMobile(mobile)) {
+                        mobileError.textContent = "Invalid mobile number";
+                        isValid = false;
+                    }
+            
+                    
+                    
+            
+                    return isValid;
+                }
+            
+                
+            
+                function isValidEmail(email) {
+             
+                    var re =  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.\.-]+\.[a-zA-Z]{2,4}$/;
+                    return re.test(email);
+                }
+            
+                function isValidMobile(mobile) {
+                 
+                    var re = /^[1-9][0-9]{9}$/;
+                    return re.test(mobile);
+                }
+                
+            
+            
+            </script>
+            
+            
+
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
